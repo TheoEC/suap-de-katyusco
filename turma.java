@@ -1,14 +1,38 @@
+import java.util.ArrayList;
 public class turma {
-	private int quantidade_de_alunos;
-	private String Sala;
+	private int matriculados;
+	private	dia segunda = new dia();
+	private	dia terca = new dia();
+	private dia quarta = new dia();
+	private dia quinta = new dia();
+	private	dia sexta = new dia();
+	private aluno[] Aluno = new aluno[40]; 
+	
+	//---------------------------------------------------------------------------------
 
-	//-------------------------------------------------------
+	public boolean set_aluno (aluno alguem) {
+		if (matriculados < 40) {
+			this.Aluno[matriculados] = (alguem);	
+			matriculados += 1;
+			return true;
+		}
 
-	public void set_aluno (String alguem) {
-		this.quantidade_de_alunos += 1;
+		else {
+			System.out.println("Turma lotada");
+			return false;
+		}
+
+	}
+	
+	//------------------GET------------------------------------------------------------
+
+	public void get_lista() {					// imprime a lista de alunos
+		for (int i = 0; i < matriculados; i++) {
+			System.out.println((i + 1) + " - " + this.Aluno[i].get_nome());
+		}
 	}
 
-	public void set_sala(String letra) {
-		this.Sala = letra;
+	public int matriculados() {					// retorna a quantidade de alunos cadastrados na turma.
+		return (this.matriculados);
 	}
 }
