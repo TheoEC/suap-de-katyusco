@@ -22,7 +22,7 @@ public class Pagamentos{
 		this.Metodo_de_pagamento =  forma;
 	}
 	
-	public void imprimi_boleto() {
+	public void imprime_boleto() {
 		System.out.println("Pagamento:");
 		System.out.println("Referente a " + Referente);
 		System.out.println("Valor: " + Valor);

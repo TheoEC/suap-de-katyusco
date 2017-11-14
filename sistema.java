@@ -7,7 +7,7 @@ public class sistema {
 
 		int matriculados = 0;													// Servira para formar o numero de matricula do aluno
 		
-		busca_usuario buscador_usuarios = new busca_usuario();
+		busca_usuario buscador_usuarios = new busca_usuario();				// BANCO DE DADOS
 		
 		turma turma_A = new turma();
 		turma turma_B = new turma();
@@ -202,6 +202,14 @@ public class sistema {
 						System.out.println("Digite a data de vencimento");
 						String vencimento = inpt.next();
 						boleto.set_data_de_vencimento(vencimento);
+						buscador_usuarios.set_boleto(boleto);
+					}
+						
+					else if (opcao_pagamento == 2) {
+						System.out.println("Digite o numero do boleto");
+						int num_boleto = inpt.nextInt();
+						buscador_usuarios.get_pagamento(num_boleto);
+						
 					}
 					
 				}
